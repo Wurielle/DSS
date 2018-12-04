@@ -9,8 +9,9 @@ exports.testParse = function(test){
   dss.parse(fileContents, {}, function(parsed) {
     var block = parsed.blocks[0];
     test.equal(block.name, 'Button');
+    console.log(block.description);
     test.equal(block.description, 'Your standard form button.\nIt works great.');
-
+    console.log(block.markup.example);
     test.equal(block.markup.example.trim(), '<div class="test">\n  <a>Test</a>\r\n</div>');
     test.equal(block.markup.escaped.trim(), '&lt;div class="test"&gt;\n  &lt;a&gt;Test&lt;/a&gt;\r\n&lt;/div&gt;');
     test.done();
