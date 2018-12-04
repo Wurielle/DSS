@@ -3,12 +3,12 @@ var fs = require('fs');
 var path = require('path');
 var dss = require('../dss');
 
-// Basic Parsing CSS
-exports.parseCSS = function (test) {
+// Basic Parsing Stylus
+exports.parseStylus = function (test) {
 
     test.expect(3);
 
-    var fileContents = fs.readFileSync(path.join(__dirname, 'data/parse.css'), 'utf8');
+    var fileContents = fs.readFileSync(path.join(__dirname, 'data/parse.styl'), 'utf8');
 
     dss.parse(fileContents, {}, function (parsed) {
         console.log(JSON.stringify(parsed, null, 2));
